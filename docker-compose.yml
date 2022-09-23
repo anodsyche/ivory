@@ -8,10 +8,10 @@ services:
     restart: on-failure
     build: ./web
     ports:
-      - '81:5000'
+      - '5000:5000'
   nginx:
     build: ./nginx
     ports:
-    - '80:80'
+    - '9001:9001'
     depends_on:
     - web
