@@ -4,14 +4,14 @@ services:
     image: 'redis:alpine'
     ports:
       - '6379:6379'
-  web:
+  app:
     restart: on-failure
-    build: ./web
+    build: ./app
     ports:
       - '5000:5000'
-  nginx:
-    build: ./nginx
+  web:
+    build: ./web
     ports:
-    - '9001:9001'
+    - '80:9001'
     depends_on:
     - web
