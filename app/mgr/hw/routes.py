@@ -8,3 +8,5 @@ helloworld = Blueprint('hw',__name__)
 def hello():
     redis.incr('hits')
     return 'This Compose/Flask demo has been viewed %s time(s).' % redis.get('hits')
+
+#eof
