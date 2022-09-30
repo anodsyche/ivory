@@ -1,5 +1,9 @@
 FROM python:3.9-alpine
 
+ENV REDIS_OM_URL=redis://redis:6379
+
+RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev
+
 ADD . /app
 WORKDIR /app
 COPY . /app
